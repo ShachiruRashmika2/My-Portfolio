@@ -20,10 +20,11 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Link as RouterLink } from "react-router-dom";
 
 const pages = [
-  { name: "Home", path: "/" },
-  { name: "Countries", path: "/countries" },
-  { name: "Flags", path: "#" },
-  { name: "Map", path: "/sep/map" },
+  { name: "ME", path: "/" },
+  { name: "Builds", path: "/builds" },
+  { name: "Accolades", path: "#" },
+  { name: "Tech-Deck", path: "/sep/map" },
+  { name: "Connect", path: "/sep/map" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -149,47 +150,92 @@ function Navbar() {
           >
             <img alt="logo" style={{ width: "200px" }} />
           </Box>
-
           <Box
+            className="main-bar-wrapper"
             sx={{
-              position: "absolute",
-              left: "50%",
-              transform: "translateX(-50%)",
-              display: { xs: "none", md: "flex" },
-              justifyContent: "center",
-              bgcolor: "#242424",
-              borderBottomLeftRadius: 24,
-              borderBottomRightRadius: 24,
-              px: 2,
-              py: 1,
+              position: "relative",
+              zIndex: 1,
+
               height: "100%",
+              display: { xs: "none", md: "flex" },
+
+              "&::before, &::after": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                width: 20,
+                height: 20,
+                bgcolor: "#242424",
+
+                zIndex: 0,
+              },
+              "&::before": {
+                left: -20,
+              },
+              "&::after": {
+                right: -20,
+              },
             }}
           >
-            {pages.map((page) => (
-              <Button
-                variant="text"
-                component={RouterLink}
-                to={page.path}
-                color="primary"
-                key={page.name}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  mx: 1,
-                  display: "block",
-                  fontSize: { md: 18 },
-                  fontWeight: "600",
-                  color: "text.primary",
-                  textTransform: "none",
-                  textAlign: "center",
-                  p: 2,
-                  borderRadius: 24,
-                  width: 150,
-                  "&:hover": { backgroundColor: "primary.main" },
-                }}
-              >
-                {page.name}
-              </Button>
-            ))}
+            <Box
+              className="main-bar"
+              sx={{
+                position: "relative",
+                zIndex: 2,
+                display: { xs: "none", md: "flex" },
+                justifyContent: "center",
+                bgcolor: "#242424",
+                borderBottomLeftRadius: 24,
+                borderBottomRightRadius: 24,
+                px: 2,
+                py: 1,
+                height: "100%",
+                overflow: "visible",
+
+                "&::before, &::after": {
+                  content: '""',
+                  position: "absolute",
+                  width: 40,
+                  height: 40,
+                  borderRadius: "50%",
+                  backgroundColor: "white",
+                  top: 0,
+                  zIndex: 1,
+                },
+                "&::before": {
+                  left: -40,
+                },
+                "&::after": {
+                  right: -40,
+                },
+              }}
+            >
+              {pages.map((page) => (
+                <Button
+                  variant="text"
+                  component={RouterLink}
+                  to={page.path}
+                  color="primary"
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    mx: 1,
+                    display: "block",
+                    fontSize: { md: 18 },
+                    fontWeight: "600",
+                    color: "text.primary",
+                    textTransform: "none",
+                    textAlign: "center",
+                    p: 2,
+                    borderRadius: 24,
+                    width: 150,
+                    "&:hover": { backgroundColor: "primary.main" },
+                  }}
+                >
+                  {page.name}
+                </Button>
+              ))}
+            </Box>
           </Box>
 
           <Box
