@@ -73,7 +73,7 @@ function Navbar() {
         >
           <Box
             sx={{
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none", sm: "none", md: "flex" },
               mr: 1,
               justifyContent: "center",
               alignItems: "center",
@@ -164,6 +164,7 @@ function Navbar() {
                 position: "absolute",
                 top: 0,
                 width: 20,
+                display: { xs: "none", md: "block" },
                 height: 20,
                 bgcolor: "#242424",
 
@@ -199,6 +200,7 @@ function Navbar() {
                   height: 40,
                   borderRadius: "50%",
                   backgroundColor: "white",
+                  display: { xs: "none", md: "block" },
                   top: 0,
                   zIndex: 1,
                 },
@@ -241,7 +243,7 @@ function Navbar() {
           <Box
             sx={{
               flexGrow: 0,
-              display: { xs: "none", sm: "flex" },
+              display: { xs: "none", sm: "none", md: "none", lg: "flex" },
               justifyContent: "flex-end",
             }}
           >

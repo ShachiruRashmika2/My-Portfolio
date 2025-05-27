@@ -6,10 +6,8 @@ const Layout = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
         alignItems: "center",
-
+        px: 2,
         bgcolor: "white",
         width: "100%",
         borderRadius: { xs: "10px", sm: "10px", md: "20px" },
