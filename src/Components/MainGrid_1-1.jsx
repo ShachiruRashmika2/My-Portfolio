@@ -1,10 +1,11 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import Face from "../assets/Images/Me (2).png";
 import Terminal from "./Terminal";
-import { purple } from "@mui/material/colors";
+import { lightBlue, purple } from "@mui/material/colors";
 import curcuit from "../assets/Images/Asset 1.png";
-
+import DeleteIcon from "@mui/icons-material/Delete";
+import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
 const MainGrid_1_1 = () => {
   return (
     <Grid
@@ -224,6 +225,166 @@ const MainGrid_1_1 = () => {
         }}
       >
         <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            m: 2,
+            p: 2,
+            width: { md: 180, xs: 100, sm: 100 },
+            height: { md: 80, xs: 40, sm: 40 },
+
+            zIndex: 0,
+          }}
+        >
+          <Typography
+            variant={"h4"}
+            sx={{
+              color: "white",
+              fontWeight: 900,
+              fontSize: { xs: "1.5rem", sm: "1.5rem", md: "2.125rem" },
+            }}
+          >
+            Hello There...
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            m: 2,
+            width: { md: 180, xs: 100, sm: 100 },
+            height: { md: 80, xs: 40, sm: 40 },
+            zIndex: 2,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Button variant="contained">Connect</Button>
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            m: 2,
+            width: { md: 180, xs: 100, sm: 100 },
+            height: { md: 80, xs: 40, sm: 40 },
+
+            zIndex: 2,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "flex-end",
+            justifyContent: "center",
+            gap: { xs: 0.6, md: 2 },
+          }}
+        >
+          <IconButton
+            aria-label="fb"
+            size="Large"
+            sx={{
+              backgroundColor: "rgb(15, 15, 15)",
+              fontSize: { xs: 20, md: 24 },
+
+              backgroundImage:
+                "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
+              color: "white",
+            }}
+          >
+            <FacebookTwoToneIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton
+            aria-label="fb"
+            size="Large"
+            sx={{
+              backgroundColor: "rgb(15, 15, 15)",
+              fontSize: { xs: 20, md: 24 },
+
+              backgroundImage:
+                "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
+              color: "white",
+            }}
+          >
+            <FacebookTwoToneIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton
+            aria-label="fb"
+            size="Large"
+            sx={{
+              backgroundColor: "rgb(15, 15, 15)",
+              fontSize: { xs: 20, md: 24 },
+
+              backgroundImage:
+                "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
+              color: "white",
+            }}
+          >
+            <FacebookTwoToneIcon fontSize="inherit" />
+          </IconButton>
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            right: 0,
+            m: 2,
+            width: { md: 180, xs: 100, sm: 100 },
+            height: { md: 80, xs: 40, sm: 40 },
+
+            zIndex: 2,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "flex-end",
+            justifyContent: "center",
+            gap: { xs: 0.6, md: 2 },
+          }}
+        >
+          <IconButton
+            aria-label="fb"
+            size="Large"
+            sx={{
+              backgroundColor: "rgb(15, 15, 15)",
+              fontSize: { xs: 20, md: 24 },
+
+              backgroundImage:
+                "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
+              color: "white",
+            }}
+          >
+            <FacebookTwoToneIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton
+            aria-label="fb"
+            size="Large"
+            sx={{
+              backgroundColor: "rgb(15, 15, 15)",
+              fontSize: { xs: 20, md: 24 },
+
+              backgroundImage:
+                "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
+              color: "white",
+            }}
+          >
+            <FacebookTwoToneIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton
+            aria-label="fb"
+            size="Large"
+            sx={{
+              backgroundColor: "rgb(15, 15, 15)",
+              fontSize: { xs: 20, md: 24 },
+
+              backgroundImage:
+                "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
+              color: "white",
+            }}
+          >
+            <FacebookTwoToneIcon fontSize="inherit" />
+          </IconButton>
+        </Box>
+        <Box
           component="img"
           src={curcuit}
           alt="Background"
@@ -293,6 +454,7 @@ const MainGrid_1_1 = () => {
               rotate: "-30deg",
             }}
           />
+
           <Box
             sx={{
               position: "absolute",

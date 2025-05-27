@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Box, TextField } from "@mui/material";
 import { keyframes } from "@emotion/react";
 
 const blink = keyframes`
@@ -18,7 +18,7 @@ const TerminalLine = ({ text, color, delay, cursorDelay, infiniteCursor }) => (
       display: "flex",
       color,
       fontFamily: "monospace",
-      fontSize: "1.25em",
+      fontSize: "1.2em",
       whiteSpace: "nowrap",
       overflow: "hidden",
       width: 0,
@@ -42,6 +42,18 @@ const TerminalLine = ({ text, color, delay, cursorDelay, infiniteCursor }) => (
 );
 
 const Terminal = () => {
+  const [command, setCommand] = useState("");
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (command.trim()) {
+        console.log("Submitted command:", command); // You can change this
+        setCommand(""); // Clear after submission
+      }
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -67,35 +79,20 @@ const Terminal = () => {
           pl: 1,
         }}
       >
-        <Box
-          sx={{
-            height: 10,
-            width: 10,
-            borderRadius: "50%",
-            backgroundColor: "#ff3b47",
-            border: "1px solid #9d252b",
-            mr: "5px",
-          }}
-        />
-        <Box
-          sx={{
-            height: 10,
-            width: 10,
-            borderRadius: "50%",
-            backgroundColor: "#ffc100",
-            border: "1px solid #9d802c",
-            mr: "5px",
-          }}
-        />
-        <Box
-          sx={{
-            height: 10,
-            width: 10,
-            borderRadius: "50%",
-            backgroundColor: "#00d742",
-            border: "1px solid #049931",
-          }}
-        />
+        {/* Circles */}
+        {["#ff3b47", "#ffc100", "#00d742"].map((bg, i) => (
+          <Box
+            key={i}
+            sx={{
+              height: 10,
+              width: 10,
+              borderRadius: "50%",
+              backgroundColor: bg,
+              border: "1px solid rgba(0,0,0,0.3)",
+              mr: "5px",
+            }}
+          />
+        ))}
       </Box>
 
       {/* Terminal screen */}
@@ -112,30 +109,99 @@ const Terminal = () => {
         }}
       >
         <TerminalLine
-          text="$ yo gulp-webapp"
+          text="S C:\projects\portfolio> type about-me.txt"
           color="#9CD9F0"
           delay={1}
           cursorDelay={2}
         />
         <TerminalLine
-          text="Out of the box I include HTML5 Boilerplate, jQuery, and a gulpfile.js to build your app."
+          text="Hi, I'm a Full Stack Developer 👋"
           color="#CDEE69"
           delay={4.25}
           cursorDelay={5.25}
         />
         <TerminalLine
-          text="[?] What more would you like? (Press space to select)"
-          color="#E09690"
-          delay={7.5}
-          cursorDelay={8.5}
+          text="🚀 Specializing in React "
+          color="#CDEE69"
+          delay={5.25}
+          cursorDelay={5.25}
         />
         <TerminalLine
-          text=">"
-          color="#fff"
-          delay={10.75}
-          cursorDelay={11.5}
-          infiniteCursor
+          text="    , Node.js, MongoDB"
+          color="#CDEE69"
+          delay={5.25}
+          cursorDelay={6.25}
         />
+        <TerminalLine
+          text="🧠 Passionate about AI, ML,"
+          color="#CDEE69"
+          delay={7.25}
+          cursorDelay={5.25}
+        />
+        <TerminalLine
+          text="    and clean design"
+          color="#CDEE69"
+          delay={8.25}
+          cursorDelay={5.25}
+        />
+        <TerminalLine
+          text="🎯 Building fast, modern,"
+          color="#CDEE69"
+          delay={9.25}
+          cursorDelay={5.25}
+        />
+        <TerminalLine
+          text="   and user-friendly web apps"
+          color="#CDEE69"
+          delay={10.25}
+          cursorDelay={5.25}
+        />
+        <TerminalLine
+          text="To connect with me, enter 'SR run dev'"
+          color="#E09690"
+          delay={12.5}
+          cursorDelay={8.5}
+        />
+
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 0,
+            mt: 1,
+          }}
+        >
+          <TerminalLine
+            text=">"
+            color="#fff"
+            delay={13.5}
+            cursorDelay={11.5}
+            infiniteCursor
+          />
+          <TextField
+            value={command}
+            onChange={(e) => setCommand(e.target.value)}
+            onKeyDown={handleKeyDown}
+            variant="standard"
+            InputProps={{
+              disableUnderline: true,
+              style: {
+                color: "#fff",
+                backgroundColor: "transparent",
+                fontFamily: "monospace",
+                whiteSpace: "normal",
+              },
+            }}
+            sx={{
+              border: "none",
+              backgroundColor: "transparent",
+              whiteSpace: "normal",
+              width: "100%",
+              minWidth: "250px",
+            }}
+            autoFocus
+          />
+        </Box>
       </Box>
     </Box>
   );
