@@ -1,104 +1,33 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Face from "../assets/Images/Me (2).png";
-const MainGrid_1 = () => {
+import Terminal from "./Terminal";
+
+const MainGrid_1_1 = () => {
   return (
     <Grid
       container
       spacing={1}
       sx={{
-        px: "2%",
         width: "100%",
         height: { xs: "auto", sm: "80vh", md: "80vh" },
         display: "flex",
-
+        perspective: "1000px",
         alignItems: "center",
         justifyContent: "space-between",
       }}
       data-aos="fade-up"
     >
       <Grid
-        size={6}
-        sx={{
-          p: 5,
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-
-            width: { xs: 100, sm: 250, md: 320 },
-            height: { xs: 120, sm: 280, md: 400 },
-            overflow: "visible",
-            position: "relative",
-          }}
-        >
-          {/* Colored box that clips to image shape */}
-          <Box
-            sx={{
-              position: "absolute",
-              width: "90%",
-              height: { xs: "80%", sm: "107%", md: "107%" },
-              background:
-                "linear-gradient(-45deg,rgb(61, 255, 7),rgb(255, 6, 102),rgb(0, 64, 255),rgb(0, 255, 196))",
-              clipPath:
-                "polygon(37% 22%, 90% 20%, 107% 45%, 78% 100%, 6% 94%, 0% 42%, 17% 22%)",
-              zIndex: 1,
-
-              rotate: "-10deg",
-              animation: "hue-rotate-animation  10s linear infinite",
-            }}
-          />
-
-          <Box
-            sx={{
-              position: "absolute",
-              width: "120%",
-              height: "110%",
-              borderTopLeftRadius: "50%",
-              borderTopRightRadius: "20%",
-              bgcolor: "#242424",
-              WebkitMaskImage: "linear-gradient(black, transparent)",
-              maskImage: "linear-gradient(black, transparent)",
-              WebkitMaskRepeat: "no-repeat",
-              maskRepeat: "no-repeat",
-              WebkitMaskSize: "100% 100%",
-              maskSize: "100% 100%",
-              zIndex: 0,
-            }}
-          />
-
-          {/* Image over the colored box */}
-          <Box
-            component={"img"}
-            src={Face}
-            alt="Face"
-            sx={{
-              position: "absolute",
-              width: "110%",
-              height: "auto",
-              objectFit: "cover",
-              zIndex: 3,
-              filter: `
-      drop-shadow(0px 50px 100px rgba(50, 50, 93, 0.25)) 
-      drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.3))
-    `,
-            }}
-          />
-        </Box>
-      </Grid>
-      <Grid
-        size={6}
+        size={3}
         sx={{
           p: 5,
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
+          bgcolor: "yellow",
+          overflow: "hidden",
+          transform: "rotate3d(0, 1, 0, 60deg)",
         }}
       >
         <Typography
@@ -245,8 +174,98 @@ const MainGrid_1 = () => {
           Designer
         </Typography>
       </Grid>
+
+      <Grid
+        size={6}
+        sx={{
+          p: 5,
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+          bgcolor: "orange",
+          transform: "rotate3d(1,0 , 0, 6deg)",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+
+            width: { xs: 100, sm: 250, md: 320 },
+            height: { xs: 120, sm: 280, md: 400 },
+            overflow: "visible",
+            position: "relative",
+          }}
+        >
+          {/* Colored box that clips to image shape */}
+          <Box
+            sx={{
+              position: "absolute",
+              width: "90%",
+              height: { xs: "80%", sm: "107%", md: "107%" },
+              background:
+                "linear-gradient(-45deg,rgb(61, 255, 7),rgb(255, 6, 102),rgb(0, 64, 255),rgb(0, 255, 196))",
+              clipPath:
+                "polygon(37% 22%, 90% 20%, 107% 45%, 78% 100%, 6% 94%, 0% 42%, 17% 22%)",
+              zIndex: 1,
+
+              rotate: "-10deg",
+              animation: "hue-rotate-animation  10s linear infinite",
+            }}
+          />
+
+          <Box
+            sx={{
+              position: "absolute",
+              width: "120%",
+              height: "110%",
+              borderTopLeftRadius: "50%",
+              borderTopRightRadius: "20%",
+              bgcolor: "#242424",
+              WebkitMaskImage: "linear-gradient(black, transparent)",
+              maskImage: "linear-gradient(black, transparent)",
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskSize: "100% 100%",
+              maskSize: "100% 100%",
+              zIndex: 0,
+            }}
+          />
+
+          {/* Image over the colored box */}
+          <Box
+            component={"img"}
+            src={Face}
+            alt="Face"
+            sx={{
+              position: "absolute",
+              width: "110%",
+              height: "auto",
+              objectFit: "cover",
+              zIndex: 3,
+              filter: `
+      drop-shadow(0px 50px 100px rgba(50, 50, 93, 0.25)) 
+      drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.3))
+    `,
+            }}
+          />
+        </Box>
+      </Grid>
+      <Grid
+        size={3}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          bgcolor: "tomato",
+          transform: "rotate3d(0, 1, 0, -60deg)",
+        }}
+      >
+        <Terminal />
+      </Grid>
     </Grid>
   );
 };
 
-export default MainGrid_1;
+export default MainGrid_1_1;

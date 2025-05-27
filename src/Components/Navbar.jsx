@@ -112,7 +112,6 @@ function Navbar() {
               PaperProps={{
                 sx: {
                   background: " rgba(255, 196, 0, 0.248)",
-
                   backdropFilter: "blur(5.1px)",
                 },
               }}
@@ -142,23 +141,21 @@ function Navbar() {
               display: {
                 xs: "flex",
                 md: "none",
-                justifyContent: "center",
-                alignItems: "center",
               },
+              justifyContent: "center",
+              alignItems: "center",
               mr: 1,
             }}
           >
-            <img alt="logo" style={{ width: "200px" }} />
+            <Box component="img" alt="logo" sx={{ width: "200px" }} />
           </Box>
           <Box
             className="main-bar-wrapper"
             sx={{
               position: "relative",
               zIndex: 1,
-
               height: "100%",
               display: { xs: "none", md: "flex" },
-
               "&::before, &::after": {
                 content: '""',
                 position: "absolute",
@@ -166,8 +163,7 @@ function Navbar() {
                 width: 20,
                 display: { xs: "none", md: "block" },
                 height: 20,
-                bgcolor: "#242424",
-
+                bgcolor: "white",
                 zIndex: 0,
               },
               "&::before": {
@@ -185,7 +181,7 @@ function Navbar() {
                 zIndex: 2,
                 display: { xs: "none", md: "flex" },
                 justifyContent: "center",
-                bgcolor: "#242424",
+                bgcolor: "white",
                 borderBottomLeftRadius: 24,
                 borderBottomRightRadius: 24,
                 px: 2,
@@ -198,17 +194,30 @@ function Navbar() {
                   position: "absolute",
                   width: 40,
                   height: 40,
-                  borderRadius: "50%",
-                  backgroundColor: "white",
+
+                  backgroundColor: "rgb(28, 28, 28)",
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 1288 1288' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+                         radial-gradient(circle at -45% 146%, rgb(29, 29, 29) 12%, transparent 52%),
+                         radial-gradient(circle at 34% 108%, rgb(30, 31, 31) 22%, transparent 75%),
+                         radial-gradient(circle at -30% -28%, hsla(191.43, 47%, 17%, 1) 7%, transparent 74%),
+                         radial-gradient(circle at 49% -33%, rgb(30, 30, 30) 0%, transparent 51%)`,
+                  backgroundBlendMode:
+                    "overlay, overlay, overlay, overlay, overlay",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
                   display: { xs: "none", md: "block" },
                   top: 0,
                   zIndex: 1,
                 },
                 "&::before": {
                   left: -40,
+                  borderTopRightRadius: 20,
+                  borderBottomLeftRadius: 40,
                 },
                 "&::after": {
                   right: -40,
+                  borderTopLeftRadius: 20,
+                  borderBottomRightRadius: 40,
                 },
               }}
             >

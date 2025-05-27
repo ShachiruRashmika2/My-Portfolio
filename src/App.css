@@ -1,13 +1,15 @@
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
- 
-  background-color: #242424;
+
   width: 100%;
   padding: 10px;
+
   
 }
 
@@ -42,3 +44,5 @@ body {
 @keyframes caret {
 	50% { color: transparent }
 }
+
+
