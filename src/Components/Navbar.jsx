@@ -196,15 +196,11 @@ function Navbar() {
                   height: 40,
 
                   backgroundColor: "rgb(28, 28, 28)",
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 1288 1288' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
-                         radial-gradient(circle at -45% 146%, rgb(29, 29, 29) 12%, transparent 52%),
-                         radial-gradient(circle at 34% 108%, rgb(30, 31, 31) 22%, transparent 75%),
-                         radial-gradient(circle at -30% -28%, hsla(191.43, 47%, 17%, 1) 7%, transparent 74%),
-                         radial-gradient(circle at 49% -33%, rgb(30, 30, 30) 0%, transparent 51%)`,
-                  backgroundBlendMode:
-                    "overlay, overlay, overlay, overlay, overlay",
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
+                  backgroundImage: `
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 1288 1288' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+      linear-gradient(to bottom, rgba(29, 29, 29, 0.8) 0%, rgba(10, 10, 10, 0.7) 100%)
+    `,
+                  backgroundBlendMode: "overlay, overlay",
                   display: { xs: "none", md: "block" },
                   top: 0,
                   zIndex: 1,

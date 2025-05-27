@@ -43,7 +43,16 @@ const TerminalLine = ({ text, color, delay, cursorDelay, infiniteCursor }) => (
 
 const Terminal = () => {
   return (
-    <Box sx={{ backgroundColor: "#272727", py: 2, px: 1, width: "100%" }}>
+    <Box
+      sx={{
+        backgroundColor: "#272727",
+        py: 2,
+        px: 1,
+        width: "100%",
+        border: "solid 2px white",
+        borderRadius: "20px",
+      }}
+    >
       {/* Menu bar */}
       <Box
         sx={{
