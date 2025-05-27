@@ -43,13 +43,19 @@ const TerminalLine = ({ text, color, delay, cursorDelay, infiniteCursor }) => (
 
 const Terminal = () => {
   const [command, setCommand] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [showResponse, setShowResponse] = useState(false);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       if (command.trim()) {
-        console.log("Submitted command:", command); // You can change this
-        setCommand(""); // Clear after submission
+        console.log("Submitted command:", command);
+        setCommand("");
+        setTimeout(() => {
+          setLoading(false);
+          setShowResponse(true);
+        }, 2000);
       }
     }
   };
@@ -202,6 +208,11 @@ const Terminal = () => {
             autoFocus
           />
         </Box>
+        {showResponse && !loading && (
+          <Box sx={{ color: "#00d742", fontFamily: "monospace", mt: 2 }}>
+            ✅ Opening contact tools...
+          </Box>
+        )}
       </Box>
     </Box>
   );
