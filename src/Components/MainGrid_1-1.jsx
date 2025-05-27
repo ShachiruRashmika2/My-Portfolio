@@ -9,11 +9,12 @@ const MainGrid_1_1 = () => {
   return (
     <Grid
       container
-      spacing={1}
+      spacing={2}
       sx={{
+        height: { xs: "auto", md: "80vh" },
         width: "100%",
         px: "2%",
-        height: { xs: "auto", sm: "80vh", md: "80vh" },
+
         display: "flex",
         perspective: "1000px",
         alignItems: "center",
@@ -22,7 +23,8 @@ const MainGrid_1_1 = () => {
       data-aos="fade-up"
     >
       <Grid
-        size={3}
+        size={{ xs: 12, sm: 12, md: 3, lg: 3 }}
+        order={{ xs: 2, sm: 2, md: 1, lg: 1 }}
         sx={{
           p: 2,
           display: "flex",
@@ -34,7 +36,10 @@ const MainGrid_1_1 = () => {
             "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
 
           overflow: "hidden",
-          transform: "rotate3d(0, 1, 0, 60deg)",
+          transform: {
+            xs: "none",
+            md: "rotate3d(0, 1, 0, 60deg)",
+          },
           border: "solid 2px white",
           borderRadius: "20px",
         }}
@@ -202,7 +207,8 @@ const MainGrid_1_1 = () => {
       </Grid>
 
       <Grid
-        size={6}
+        size={{ xs: 12, sm: 12, md: 6, lg: 6 }}
+        order={{ xs: 1, sm: 1, md: 2, lg: 2 }}
         sx={{
           p: 5,
           justifyContent: "center",
@@ -326,13 +332,17 @@ const MainGrid_1_1 = () => {
         </Box>
       </Grid>
       <Grid
-        size={3}
+        size={{ xs: 12, sm: 12, md: 3, lg: 3 }}
+        order={{ xs: 3, sm: 3, md: 3, lg: 3 }}
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
 
-          transform: "rotate3d(0, 1, 0, -60deg)",
+          transform: {
+            xs: "none",
+            md: "rotate3d(0, 1, 0, -60deg)",
+          },
         }}
       >
         <Terminal />

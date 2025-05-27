@@ -67,7 +67,7 @@ function Navbar() {
           sx={{
             height: "100%",
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "center",
           }}
         >
@@ -79,6 +79,8 @@ function Navbar() {
               alignItems: "center",
               height: "100%",
               flexGrow: 0,
+              position: "absolute",
+              left: 0,
             }}
           >
             <Box component={"img"} alt="logo" sx={{ width: "200px" }} />
@@ -145,6 +147,8 @@ function Navbar() {
               justifyContent: "center",
               alignItems: "center",
               mr: 1,
+              position: "absolute",
+              left: 0,
             }}
           >
             <Box component="img" alt="logo" sx={{ width: "200px" }} />
@@ -154,12 +158,14 @@ function Navbar() {
             sx={{
               position: "relative",
               zIndex: 1,
+
               height: "100%",
               display: { xs: "none", md: "flex" },
               "&::before, &::after": {
                 content: '""',
                 position: "absolute",
                 top: 0,
+
                 width: 20,
                 display: { xs: "none", md: "block" },
                 height: 20,
@@ -230,13 +236,23 @@ function Navbar() {
                     display: "block",
                     fontSize: { md: 18 },
                     fontWeight: "600",
-                    color: "text.primary",
+                    color: "White",
+                    boxShadow: " rgba(0, 0, 0, 0.9) 0px 8px 19px",
+
                     textTransform: "none",
                     textAlign: "center",
                     p: 2,
                     borderRadius: 24,
                     width: 150,
-                    "&:hover": { backgroundColor: "primary.main" },
+                    backgroundColor: "rgb(15, 15, 15)",
+                    backgroundImage:
+                      "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
+
+                    "&:hover": {
+                      backgroundColor: "white",
+                      color: "black",
+                      boxShadow: " rgba(0, 3p, 0, 0.9) 0px 8px 19px",
+                    },
                   }}
                 >
                   {page.name}
@@ -250,6 +266,8 @@ function Navbar() {
               flexGrow: 0,
               display: { xs: "none", sm: "none", md: "none", lg: "flex" },
               justifyContent: "flex-end",
+              position: "absolute",
+              right: 0,
             }}
           >
             <IconButton aria-label="Mode" size="large">
