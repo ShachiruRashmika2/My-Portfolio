@@ -15,13 +15,24 @@ const MainGrid_1_1 = () => {
         height: { xs: "auto", md: "80vh" },
         width: "100%",
         px: "2%",
-
+        opacity: 0,
         display: "flex",
         perspective: "1000px",
         alignItems: "center",
         justifyContent: "space-between",
+
+        animation: "flipUp 2.5s ease-in-out forwards 1s",
+        "@keyframes flipUp": {
+          from: {
+            opacity: 0,
+            transform: "rotate3d(1, 0, 0, -60deg)",
+          },
+          to: {
+            opacity: 1,
+            transform: "rotate3d(1, 0, 0, 0deg)",
+          },
+        },
       }}
-      data-aos="fade-up"
     >
       <Grid
         size={{ xs: 12, sm: 12, md: 3, lg: 3 }}
@@ -436,6 +447,7 @@ const MainGrid_1_1 = () => {
           />
 
           <Box
+            className="mask-box1"
             sx={{
               position: "absolute",
               width: "120%",
@@ -452,10 +464,17 @@ const MainGrid_1_1 = () => {
               maskSize: "100% 100%",
               zIndex: 0,
               rotate: "-30deg",
+              animation: "rotate-animation  2s ease-in-out 4s",
+              "@keyframes rotate-animation": {
+                "0%": { transform: "rotate(-5deg)", scale: 1.05 },
+
+                "100%": { transform: "rotate(0deg)", scale: 1 },
+              },
             }}
           />
 
           <Box
+            className="mask-box2"
             sx={{
               position: "absolute",
               width: "120%",
@@ -472,6 +491,12 @@ const MainGrid_1_1 = () => {
               maskSize: "100% 100%",
               zIndex: 0,
               rotate: "30deg",
+              animation: "rotate-animation2  2s ease-in-out 4s",
+              "@keyframes rotate-animation2": {
+                "0%": { transform: "rotate(5deg)", scale: 1.05 },
+
+                "100%": { transform: "rotate(0deg)", scale: 1 },
+              },
             }}
           />
 
