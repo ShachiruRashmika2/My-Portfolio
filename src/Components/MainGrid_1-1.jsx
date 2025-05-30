@@ -238,14 +238,23 @@ const MainGrid_1_1 = () => {
         <Box
           sx={{
             position: "absolute",
-            top: 0,
-            left: 0,
+
             m: 2,
             p: 2,
             width: { md: 180, xs: 100, sm: 100 },
             height: { md: 80, xs: 40, sm: 40 },
 
             zIndex: 0,
+            animation: "moveCenter 1.5s ease-out 3s forwards ",
+            "@keyframes moveCenter": {
+              "0%": {
+                top: "50%",
+                left: "50%",
+                opacity: 0,
+              },
+
+              "100%": { top: 0, left: 0, opacity: 1 },
+            },
           }}
         >
           <Typography
@@ -262,8 +271,7 @@ const MainGrid_1_1 = () => {
         <Box
           sx={{
             position: "absolute",
-            top: 0,
-            right: 0,
+
             m: 2,
             width: { md: 180, xs: 100, sm: 100 },
             height: { md: 80, xs: 40, sm: 40 },
@@ -271,6 +279,17 @@ const MainGrid_1_1 = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+
+            animation: "moveCenter4 1.5s ease-out 3s forwards ",
+            "@keyframes moveCenter4": {
+              "0%": {
+                top: "50%",
+                right: "50%",
+                opacity: 0,
+              },
+
+              "100%": { top: 0, right: 0, opacity: 1 },
+            },
           }}
         >
           <Button variant="contained">Connect</Button>
@@ -278,8 +297,7 @@ const MainGrid_1_1 = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: 0,
-            left: 0,
+
             m: 2,
             width: { md: 180, xs: 100, sm: 100 },
             height: { md: 80, xs: 40, sm: 40 },
@@ -290,6 +308,16 @@ const MainGrid_1_1 = () => {
             alignItems: "flex-end",
             justifyContent: "center",
             gap: { xs: 0.6, md: 2 },
+            animation: "moveCenter2 1.5s ease-out 3s forwards ",
+            "@keyframes moveCenter2": {
+              "0%": {
+                bottom: "50%",
+                left: "50%",
+                opacity: 0,
+              },
+
+              "100%": { bottom: 0, left: 0, opacity: 1 },
+            },
           }}
         >
           <IconButton
@@ -338,8 +366,7 @@ const MainGrid_1_1 = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: 0,
-            right: 0,
+
             m: 2,
             width: { md: 180, xs: 100, sm: 100 },
             height: { md: 80, xs: 40, sm: 40 },
@@ -350,6 +377,16 @@ const MainGrid_1_1 = () => {
             alignItems: "flex-end",
             justifyContent: "center",
             gap: { xs: 0.6, md: 2 },
+            animation: "moveCenter3 1.5s ease-out 3s forwards ",
+            "@keyframes moveCenter3": {
+              "0%": {
+                bottom: "50%",
+                right: "50%",
+                opacity: 0,
+              },
+
+              "100%": { bottom: 0, right: 0, opacity: 1 },
+            },
           }}
         >
           <IconButton
@@ -464,9 +501,9 @@ const MainGrid_1_1 = () => {
               maskSize: "100% 100%",
               zIndex: 0,
               rotate: "-30deg",
-              animation: "rotate-animation  2s ease-in-out 4s",
+              animation: "rotate-animation  2s ease-in-out 4.5s",
               "@keyframes rotate-animation": {
-                "0%": { transform: "rotate(-5deg)", scale: 1.05 },
+                "0%": { transform: "rotate(-5deg)", scale: 1.005 },
 
                 "100%": { transform: "rotate(0deg)", scale: 1 },
               },
@@ -491,9 +528,9 @@ const MainGrid_1_1 = () => {
               maskSize: "100% 100%",
               zIndex: 0,
               rotate: "30deg",
-              animation: "rotate-animation2  2s ease-in-out 4s",
+              animation: "rotate-animation2  2s ease-in-out 4.5s",
               "@keyframes rotate-animation2": {
-                "0%": { transform: "rotate(5deg)", scale: 1.05 },
+                "0%": { transform: "rotate(5deg)", scale: 1.005 },
 
                 "100%": { transform: "rotate(0deg)", scale: 1 },
               },

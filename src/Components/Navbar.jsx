@@ -190,7 +190,7 @@ function Navbar() {
                 bgcolor: "white",
                 borderBottomLeftRadius: 24,
                 borderBottomRightRadius: 24,
-                px: 2,
+                px: 0,
                 py: 1,
                 height: "100%",
                 overflow: "visible",

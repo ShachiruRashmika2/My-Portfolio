@@ -3,8 +3,16 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import "../Styles/Layout.css";
 import back from "../assets/Images/Ass55et 1.png";
+import { useEffect, useState } from "react";
+
 const Layout = () => {
-  return (
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoaded(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return loaded ? (
     <Box
       sx={{
         position: "relative",
@@ -59,6 +67,8 @@ const Layout = () => {
 
       <Outlet />
     </Box>
+  ) : (
+    <Box className="loader" />
   );
 };
 
