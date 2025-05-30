@@ -35,6 +35,7 @@ const MainGrid_1_1 = () => {
       }}
     >
       <Grid
+        className="glass"
         size={{ xs: 12, sm: 12, md: 3, lg: 3 }}
         order={{ xs: 2, sm: 2, md: 1, lg: 1 }}
         sx={{
@@ -43,9 +44,6 @@ const MainGrid_1_1 = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "rgb(15, 15, 15)",
-          backgroundImage:
-            "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
 
           overflow: "hidden",
           transform: {
@@ -245,12 +243,17 @@ const MainGrid_1_1 = () => {
             height: { md: 80, xs: 40, sm: 40 },
 
             zIndex: 0,
-            animation: "moveCenter 1.5s ease-out 3s forwards ",
+            animation: "moveCenter 1s ease-in 3s forwards ",
             "@keyframes moveCenter": {
               "0%": {
                 top: "50%",
                 left: "50%",
                 opacity: 0,
+              },
+              "60%": {
+                top: "30%",
+                left: "30%",
+                opacity: 0.5,
               },
 
               "100%": { top: 0, left: 0, opacity: 1 },
@@ -280,12 +283,17 @@ const MainGrid_1_1 = () => {
             justifyContent: "center",
             alignItems: "center",
 
-            animation: "moveCenter4 1.5s ease-out 3s forwards ",
+            animation: "moveCenter4 1s ease-in 3s forwards ",
             "@keyframes moveCenter4": {
               "0%": {
                 top: "50%",
                 right: "50%",
                 opacity: 0,
+              },
+              "60%": {
+                top: "30%",
+                right: "30%",
+                opacity: 0.5,
               },
 
               "100%": { top: 0, right: 0, opacity: 1 },
@@ -308,12 +316,17 @@ const MainGrid_1_1 = () => {
             alignItems: "flex-end",
             justifyContent: "center",
             gap: { xs: 0.6, md: 2 },
-            animation: "moveCenter2 1.5s ease-out 3s forwards ",
+            animation: "moveCenter2 1s ease-in 3s forwards ",
             "@keyframes moveCenter2": {
               "0%": {
                 bottom: "50%",
                 left: "50%",
                 opacity: 0,
+              },
+              "60%": {
+                bottoml: "30%",
+                left: "30%",
+                opacity: 0.5,
               },
 
               "100%": { bottom: 0, left: 0, opacity: 1 },
@@ -377,12 +390,17 @@ const MainGrid_1_1 = () => {
             alignItems: "flex-end",
             justifyContent: "center",
             gap: { xs: 0.6, md: 2 },
-            animation: "moveCenter3 1.5s ease-out 3s forwards ",
+            animation: "moveCenter3 1s ease-in 3s forwards ",
             "@keyframes moveCenter3": {
               "0%": {
                 bottom: "50%",
                 right: "50%",
                 opacity: 0,
+              },
+              "60%": {
+                bottom: "30%",
+                right: "30%",
+                opacity: 0.5,
               },
 
               "100%": { bottom: 0, right: 0, opacity: 1 },

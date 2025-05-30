@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import "../Styles/Layout.css";
 import back from "../assets/Images/Ass55et 1.png";
+import back2 from "../assets/Images/Asset 2.png";
 import { useEffect, useState } from "react";
 
 const Layout = () => {
@@ -39,7 +40,7 @@ const Layout = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: `url(${back})`,
+          backgroundImage: `url(${back2})`,
           backgroundSize: "100% 100vh",
           backgroundRepeat: "repeat",
           backgroundPosition: "center top",
