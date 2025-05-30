@@ -68,7 +68,16 @@ const Layout = () => {
       <Outlet />
     </Box>
   ) : (
-    <Box className="loader" />
+    <Box
+      className="loader"
+      sx={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        fontSize: { xs: "2rem", sm: "2.5rem", md: "4rem" },
+      }}
+    />
   );
 };
 
