@@ -15,13 +15,12 @@ const MainGrid_1_1 = () => {
         height: { xs: "auto", md: "80vh" },
         width: "100%",
         px: "2%",
-        opacity: 0,
+        opacity: 1,
         display: "flex",
         perspective: "1000px",
         alignItems: "center",
         justifyContent: "space-between",
 
-        animation: "flipUp 2.5s ease-in-out forwards 1s",
         "@keyframes flipUp": {
           from: {
             opacity: 0,
@@ -227,10 +226,35 @@ const MainGrid_1_1 = () => {
           backgroundColor: "rgb(15, 15, 15)",
           backgroundImage:
             "radial-gradient(at 100% 100%, hsla(0,0%,33%,0.49) 0px, transparent 30%),radial-gradient(at 0% 0%, hsla(0,0%,33%,0.49) 0px, transparent 30%)",
-          transform: "rotate3d(1,0 , 0, 6deg)",
+
           borderRadius: "40px",
           border: "solid 2px white",
           position: "relative",
+          opacity: { xs: 1, sm: 1, md: 0 },
+          transformStyle: "preserve-3d",
+
+          animation: {
+            xs: "flipup 2s ease-in forwards 1s",
+            sm: "flipup 2s ease-in forwards 1s",
+            md: "flipper 2s ease-in forwards 1s",
+          },
+          "@keyframes flipper": {
+            "0%": {
+              opacity: 0,
+              transform:
+                "rotate3d(1, 0, 0, 90deg) translateZ(-150px) translateY(-3000px)",
+            },
+            "50%": {
+              opacity: 0.5,
+              transform:
+                "rotate3d(1, 0, 0, 90deg) translateZ(-150px) translateY(-200px)",
+            },
+            "100%": {
+              opacity: 1,
+              transform:
+                " rotate3d(1,0 , 0, 6deg) translateZ(-150px) translateY(0px)",
+            },
+          },
         }}
       >
         <Box
@@ -580,6 +604,7 @@ const MainGrid_1_1 = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
+          transformStyle: "preserve-3d",
 
           transform: {
             xs: "none",

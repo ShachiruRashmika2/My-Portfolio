@@ -49,12 +49,13 @@ body {
 
 .glass{
 
-  
-    backdrop-filter: blur(8px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(8px) saturate(180%) !important;
-    background-color: rgba(237, 237, 251, 0.256) !important;
-    box-shadow: rgba(102, 102, 104, 0.25) 0px 50px 100px -20px, rgba(105, 104, 104, 0.3) 0px 30px 60px -30px !important;
- 
+ /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 
 
 }
