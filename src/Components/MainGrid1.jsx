@@ -178,12 +178,26 @@ const MainGrid1 = () => {
             sx={{
               position: "absolute",
               zIndex: 2,
+              bottom: -20,
+              opacity: 0,
               fontSize: { xs: "2rem", sm: "2rem", md: "2rem" },
               fontWeight: "bold",
               color: "primary.main",
               textAlign: "center",
               textTransform: "uppercase",
-              opacity: 0.9,
+
+              animation: "fadein 2s ease forwards 3.2s",
+              "@keyframes fadein": {
+                "0%": {
+                  opacity: 0,
+                  bottom: -200,
+                },
+
+                "100%": {
+                  opacity: 1,
+                  bottom: 0,
+                },
+              },
             }}
           >
             Hello &nbsp; i'm
@@ -232,8 +246,9 @@ const MainGrid1 = () => {
               textAlign: "center",
               textTransform: "uppercase",
               textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
+              animation: "blink 3s linear forwards 5.2s",
 
-              opacity: 0.9,
+              opacity: 0,
             }}
           >
             SH&nbsp;&nbsp;&nbsp;&nbsp;
@@ -296,7 +311,9 @@ const MainGrid1 = () => {
               color: "primary.Text",
               textAlign: "center",
               textTransform: "uppercase",
-              opacity: 0.9,
+              animation: "blink 3s linear forwards 5.2s",
+
+              opacity: 0,
               textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
             }}
           >
@@ -345,7 +362,9 @@ const MainGrid1 = () => {
               fontWeight: "bold",
               color: "primary.Text",
               textAlign: "center",
-              opacity: 0.9,
+              opacity: 0,
+              animation: "blink 3s linear forwards 5.2s",
+
               textTransform: "uppercase",
               textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
             }}
