@@ -18,9 +18,9 @@ const Layout = () => {
       sx={{
         position: "relative",
         width: "100%",
-        px: 2,
+
         overflow: "hidden",
-        borderRadius: { xs: "10px", sm: "10px", md: "20px" },
+
         backgroundColor: "rgb(28, 28, 28)",
         backgroundImage: `
       url("data:image/svg+xml,%3Csvg viewBox='0 0 1288 1288' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
@@ -29,6 +29,7 @@ const Layout = () => {
         backgroundBlendMode: "overlay, overlay",
         backgroundSize: "contain, contain",
         backgroundRepeat: "repeat, repeat",
+        borderRadius: "20px",
 
         display: "flex",
         flexDirection: "column",
@@ -48,9 +49,9 @@ const Layout = () => {
           zIndex: 1,
           pointerEvents: "none",
           WebkitMaskImage:
-            "linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 0%, rgba(30, 30, 30, 0.08) 20%, rgba(31, 31, 31, 0.5) 40%, hsla(191, 47%, 17%, 0.8) 60%, rgba(20, 20, 20, 0.6) 80%, rgba(10, 10, 10, 0.01) 100%)",
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 0%, rgba(30, 30, 30, 0.008) 20%, rgba(31, 31, 31, 0.5) 40%, hsla(191, 47%, 17%, 0.8) 60%, rgba(20, 20, 20, 0.6) 80%, rgba(10, 10, 10, 0.01) 100%)",
           maskImage:
-            "linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 0%, rgba(30, 30, 30, 0.08) 20%, rgba(31, 31, 31, 0.5) 40%, hsla(191, 47%, 17%, 0.8) 60%, rgba(20, 20, 20, 0.6) 80%, rgba(10, 10, 10, 0.01) 100%)",
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 0%, rgba(30, 30, 30, 0.008) 20%, rgba(31, 31, 31, 0.5) 40%, hsla(191, 47%, 17%, 0.8) 60%, rgba(20, 20, 20, 0.6) 80%, rgba(10, 10, 10, 0.01) 100%)",
           WebkitMaskRepeat: "repeat",
           maskRepeat: "repeat",
           WebkitMaskSize: "100% 100vh",

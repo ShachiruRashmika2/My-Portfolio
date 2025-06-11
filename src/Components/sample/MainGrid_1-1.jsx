@@ -6,6 +6,11 @@ import { lightBlue, purple } from "@mui/material/colors";
 import curcuit from "../assets/Images/Asset 1.png";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import XIcon from "@mui/icons-material/X";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const MainGrid_1_1 = () => {
   return (
     <Grid
@@ -15,6 +20,7 @@ const MainGrid_1_1 = () => {
         height: { xs: "auto", md: "80vh" },
         width: "100%",
         px: "2%",
+
         opacity: 1,
         display: "flex",
         perspective: "1000px",
@@ -51,6 +57,15 @@ const MainGrid_1_1 = () => {
           },
           border: "solid 2px white",
           borderRadius: "20px",
+          animation: "grow 2s ease-in-out forwards",
+          "@keyframes grow": {
+            "50%,0%": {
+              opacity: 0,
+            },
+            "100%": {
+              opacity: 1,
+            },
+          },
         }}
       >
         <Typography
@@ -232,11 +247,12 @@ const MainGrid_1_1 = () => {
           position: "relative",
           opacity: { xs: 1, sm: 1, md: 0 },
           transformStyle: "preserve-3d",
+          cursor: "pointer",
 
           animation: {
-            xs: "flipup 2s ease-in forwards 1s",
-            sm: "flipup 2s ease-in forwards 1s",
-            md: "flipper 2s ease-in forwards 1s",
+            xs: "flipup 2s ease forwards 1s",
+            sm: "flipup 2s ease forwards 1s",
+            md: "flipper 2s ease forwards 1s",
           },
           "@keyframes flipper": {
             "0%": {
@@ -267,7 +283,7 @@ const MainGrid_1_1 = () => {
             height: { md: 80, xs: 40, sm: 40 },
 
             zIndex: 0,
-            animation: "moveCenter 1s ease-in 3s forwards ",
+            animation: "moveCenter 1s ease 3s forwards ",
             "@keyframes moveCenter": {
               "0%": {
                 top: "50%",
@@ -307,7 +323,7 @@ const MainGrid_1_1 = () => {
             justifyContent: "center",
             alignItems: "center",
 
-            animation: "moveCenter4 1s ease-in 3s forwards ",
+            animation: "moveCenter4 1s ease 3s forwards ",
             "@keyframes moveCenter4": {
               "0%": {
                 top: "50%",
@@ -340,7 +356,7 @@ const MainGrid_1_1 = () => {
             alignItems: "flex-end",
             justifyContent: "center",
             gap: { xs: 0.6, md: 2 },
-            animation: "moveCenter2 1s ease-in 3s forwards ",
+            animation: "moveCenter2 1s ease 3s forwards ",
             "@keyframes moveCenter2": {
               "0%": {
                 bottom: "50%",
@@ -369,7 +385,7 @@ const MainGrid_1_1 = () => {
               color: "white",
             }}
           >
-            <FacebookTwoToneIcon fontSize="inherit" />
+            <LinkedInIcon fontSize="inherit" />
           </IconButton>
           <IconButton
             aria-label="fb"
@@ -397,7 +413,7 @@ const MainGrid_1_1 = () => {
               color: "white",
             }}
           >
-            <FacebookTwoToneIcon fontSize="inherit" />
+            <InstagramIcon fontSize="inherit" />
           </IconButton>
         </Box>
         <Box
@@ -414,7 +430,7 @@ const MainGrid_1_1 = () => {
             alignItems: "flex-end",
             justifyContent: "center",
             gap: { xs: 0.6, md: 2 },
-            animation: "moveCenter3 1s ease-in 3s forwards ",
+            animation: "moveCenter3 1s ease 3s forwards ",
             "@keyframes moveCenter3": {
               "0%": {
                 bottom: "50%",
@@ -443,7 +459,7 @@ const MainGrid_1_1 = () => {
               color: "white",
             }}
           >
-            <FacebookTwoToneIcon fontSize="inherit" />
+            <WhatsAppIcon fontSize="inherit" />
           </IconButton>
           <IconButton
             aria-label="fb"
@@ -457,7 +473,7 @@ const MainGrid_1_1 = () => {
               color: "white",
             }}
           >
-            <FacebookTwoToneIcon fontSize="inherit" />
+            <GitHubIcon fontSize="inherit" />
           </IconButton>
           <IconButton
             aria-label="fb"
@@ -471,7 +487,7 @@ const MainGrid_1_1 = () => {
               color: "white",
             }}
           >
-            <FacebookTwoToneIcon fontSize="inherit" />
+            <XIcon fontSize="inherit" />
           </IconButton>
         </Box>
         <Box
@@ -495,9 +511,14 @@ const MainGrid_1_1 = () => {
             maskRepeat: "no-repeat",
             WebkitMaskSize: "100% 100%",
             maskSize: "100% 100%",
+            "&:hover + .face": {
+              opacity: 0.8,
+              transform: "scale(1.05)",
+            },
           }}
         />
         <Box
+          className="face-box"
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -580,6 +601,7 @@ const MainGrid_1_1 = () => {
           />
 
           <Box
+            className="face"
             component={"img"}
             src={Face}
             alt="Face"
@@ -610,6 +632,7 @@ const MainGrid_1_1 = () => {
             xs: "none",
             md: "rotate3d(0, 1, 0, -60deg)",
           },
+          animation: "grow 2s ease-in-out forwards",
         }}
       >
         <Terminal />

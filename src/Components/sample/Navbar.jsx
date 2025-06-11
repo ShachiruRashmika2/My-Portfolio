@@ -58,6 +58,8 @@ function Navbar() {
           md: 70,
           lg: 80,
         },
+        mx: 2,
+        zIndex: 4,
         background: "transparent",
       }}
     >
@@ -67,25 +69,11 @@ function Navbar() {
           sx={{
             height: "100%",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "space-between",
             alignItems: "center",
+            px: 0,
           }}
         >
-          <Box
-            sx={{
-              display: { xs: "none", sm: "none", md: "flex" },
-              mr: 1,
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",
-              flexGrow: 0,
-              position: "absolute",
-              left: 0,
-            }}
-          >
-            <Box component={"img"} alt="logo" sx={{ width: "200px" }} />
-          </Box>
-
           <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -149,6 +137,7 @@ function Navbar() {
               mr: 1,
               position: "absolute",
               left: 0,
+              bgcolor: "lightblue",
             }}
           >
             <Box component="img" alt="logo" sx={{ width: "200px" }} />
@@ -161,7 +150,9 @@ function Navbar() {
 
               height: "100%",
               display: { xs: "none", md: "flex" },
-              "&::before, &::after": {
+              "&::before, &::after": {},
+              "&::before": {
+                left: -20,
                 content: '""',
                 position: "absolute",
                 top: 0,
@@ -169,14 +160,22 @@ function Navbar() {
                 width: 20,
                 display: { xs: "none", md: "block" },
                 height: 20,
-                bgcolor: "white",
+                bgcolor: "primary.main",
+
                 zIndex: 0,
               },
-              "&::before": {
-                left: -20,
-              },
               "&::after": {
-                right: -20,
+                right: -143,
+                content: '""',
+                position: "absolute",
+                top: 0,
+
+                width: 143,
+                display: { xs: "none", md: "block" },
+                height: "80%",
+                bgcolor: "primary.main",
+
+                zIndex: 0,
               },
             }}
           >
@@ -187,39 +186,48 @@ function Navbar() {
                 zIndex: 2,
                 display: { xs: "none", md: "flex" },
                 justifyContent: "center",
-                bgcolor: "white",
+                bgcolor: "primary.main",
+                //boxShadow: " 0 0 15px rgba(255, 211, 0, 0.5)",
                 borderBottomLeftRadius: 24,
-                borderBottomRightRadius: 24,
+                borderBottomRightRadius: "30px",
                 px: 0,
-                py: 1,
+                py: 0,
+
                 height: "100%",
                 overflow: "visible",
 
-                "&::before, &::after": {
+                "&::before": {
+                  left: -24,
+                  borderTopRightRadius: 20,
+                  borderTopLeftRadius: 20,
+
                   content: '""',
                   position: "absolute",
-                  width: 40,
+                  width: 24,
                   height: 40,
 
-                  backgroundColor: "rgb(28, 28, 28)",
-                  backgroundImage: `
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 1288 1288' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
-      linear-gradient(to bottom, rgba(29, 29, 29, 0.8) 0%, rgba(10, 10, 10, 0.7) 100%)
-    `,
+                  backgroundColor: "rgb(0, 0, 0)",
+
                   backgroundBlendMode: "overlay, overlay",
                   display: { xs: "none", md: "block" },
                   top: 0,
                   zIndex: 1,
                 },
-                "&::before": {
-                  left: -40,
-                  borderTopRightRadius: 20,
-                  borderBottomLeftRadius: 40,
-                },
                 "&::after": {
-                  right: -40,
-                  borderTopLeftRadius: 20,
-                  borderBottomRightRadius: 40,
+                  right: -143,
+                  borderTopLeftRadius: "100%",
+                  borderBottomRightRadius: 0,
+                  content: '""',
+                  position: "absolute",
+                  width: 144,
+                  height: "80%",
+
+                  backgroundColor: "rgb(0, 0, 0)",
+
+                  backgroundBlendMode: "overlay, overlay",
+                  display: { xs: "none", md: "block" },
+                  top: 0,
+                  zIndex: 1,
                 },
               }}
             >
@@ -232,26 +240,50 @@ function Navbar() {
                   key={page.name}
                   onClick={handleCloseNavMenu}
                   sx={{
-                    mx: 1,
-                    display: "block",
+                    mx: 0,
+
                     fontSize: { md: 18 },
                     fontWeight: "600",
-                    color: "White",
-                    boxShadow: " rgba(0, 0, 0, 0.9) 0px 8px 19px",
+                    color: "black",
 
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
                     textTransform: "none",
                     textAlign: "center",
                     p: 2,
-                    borderRadius: 24,
+                    borderRadius: 0,
                     width: 150,
-                    backgroundColor: "rgb(15, 15, 15)",
-                    backgroundImage:
-                      "radial-gradient(at 50% 0%, hsla(0,0%,50%,0.49) -72px, transparent 85%)",
+                    backgroundColor: "primary.main",
+
+                    "&:first-child": {
+                      borderRadius: "0 0 0 24px",
+                    },
+                    "&:last-child": {
+                      borderRadius: "0 0 30px 0",
+                    },
 
                     "&:hover": {
-                      backgroundColor: "white",
-                      color: "black",
-                      boxShadow: " rgba(0, 3p, 0, 0.9) 0px 8px 19px",
+                      backgroundColor: "black",
+                      color: "primary.main",
+                      borderRadius: "0 0 30px 30px",
+                      borderBottom: "1px solid",
+                      borderLeft: "1px solid",
+                      borderRight: "1px solid",
+                      borderColor: "primary.main",
+                      animation: "fade 0.6s ease",
+
+                      backgroundImage:
+                        "radial-gradient(at 50% 0%, hsla(59, 97.50%, 46.90%, 0.49) -72px, transparent 85%)",
+                    },
+                    "@keyframes fade": {
+                      "0%": {
+                        borderRadius: "30px 30px 0 0",
+                      },
+                      "100%": {
+                        borderRadius: "0 0 30px 30px",
+                      },
                     },
                   }}
                 >
@@ -267,14 +299,15 @@ function Navbar() {
               display: { xs: "none", sm: "none", md: "none", lg: "flex" },
               justifyContent: "flex-end",
               position: "absolute",
+              color: "primary.main",
               right: 0,
             }}
           >
-            <IconButton aria-label="Mode" size="large">
+            <IconButton aria-label="Mode" size="large" color="inherit">
               <DarkModeIcon fontSize="inherit" />
             </IconButton>
 
-            <IconButton aria-label="profile" size="large">
+            <IconButton aria-label="profile" size="large" color="inherit">
               <Person2RoundedIcon fontSize="inherit" />
             </IconButton>
           </Box>

@@ -1,0 +1,325 @@
+import { Box, Grid, Typography } from "@mui/material";
+import Navbar from "./sample/Navbar";
+import Middle from "../assets/Images/ChatGPT Image Jun 11, 2025, 10_27_03 AM.png";
+
+const MainGrid1 = () => {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        p: 0,
+        m: 0,
+        width: "100%",
+        height: "98vh",
+        backgroundColor: "#000000",
+        borderRadius: "20px",
+      }}
+    >
+      <Navbar />
+      <Grid
+        container
+        spacing={3}
+        sx={{
+          height: { xs: "auto", md: "85vh" },
+          width: "98%",
+
+          px: "2%",
+
+          mt: 2,
+
+          opacity: 1,
+          display: "flex",
+
+          perspective: "1000px",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          position: "relative",
+          transform: "translate3d(0,0,-200px)",
+
+          "@keyframes blink2": {
+            "0%": {
+              bgcolor: "black",
+              boxShadow: "none",
+            },
+            "78%": {
+              bgcolor: "inherit",
+              boxShadow: " 0 0 15px 2px rgba(255, 211, 0, 0.5)",
+            },
+            "79%": {
+              bgcolor: "primary.main",
+            },
+            "80%": {
+              boxShadow: "none",
+            },
+            "81%": {
+              bgcolor: "inherit",
+              boxShadow: " 0 0 15px 2px rgba(255, 211, 0, 0.5)",
+            },
+            "82%": {
+              bgcolor: "primary.main",
+
+              boxShadow: "none",
+            },
+            "83%": {
+              bgcolor: "inherit",
+              boxShadow: " 0 0 15px 2px rgba(255, 211, 0, 0.5)",
+            },
+            " 92%": {
+              bgcolor: "primary.main",
+              boxShadow: "none",
+            },
+            "92.5% ": {
+              bgcolor: "inherit",
+
+              boxShadow: "inherit",
+            },
+            "93%": {
+              bgcolor: "primary.main",
+              boxShadow: " 0 0 15px 2px rgba(255, 211, 0, 0.5)",
+            },
+            "100%": {
+              bgcolor: "primary.main",
+              boxShadow: " 0 0 15px 2px rgba(255, 211, 0, 0.5)",
+            },
+          },
+
+          "@keyframes blink3": {
+            "0%": {
+              bgcolor: "black",
+            },
+            "78%": {
+              bgcolor: "inherit",
+            },
+            "79%": {
+              bgcolor: "rgba(255, 213, 0, 0.4)",
+            },
+            "80%": {
+              boxShadow: "none",
+            },
+            "81%": {
+              bgcolor: "inherit",
+            },
+            "82%": {
+              bgcolor: "rgba(255, 213, 0, 0.4)",
+            },
+            "83%": {
+              bgcolor: "inherit",
+            },
+            " 92%": {
+              bgcolor: "rgba(255, 213, 0, 0.4)",
+              boxShadow: "none",
+            },
+            "92.5% ": {
+              bgcolor: "inherit",
+            },
+            "93%": {
+              bgcolor: "rgba(255, 213, 0, 0.4)",
+            },
+            "100%": {
+              bgcolor: "rgba(255, 213, 0, 0.4)",
+            },
+          },
+        }}
+      >
+        <Grid
+          size={{ xs: 12, sm: 12, md: 12, lg: 12 }}
+          sx={{
+            position: "absolute",
+            top: 0,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+
+            left: 0,
+            width: "100%",
+            height: "10%",
+
+            zIndex: -1,
+          }}
+        >
+          <Typography
+            sx={{
+              position: "absolute",
+              zIndex: 2,
+              fontSize: { xs: "2rem", sm: "2rem", md: "2rem" },
+              fontWeight: "bold",
+              color: "primary.main",
+              textAlign: "center",
+              textTransform: "uppercase",
+              opacity: 0.9,
+            }}
+          >
+            Hello &nbsp; i'm
+          </Typography>
+        </Grid>
+        <Grid
+          size={{ xs: 12, sm: 12, md: 4, lg: 4 }}
+          order={{ xs: 2, sm: 2, md: 1, lg: 1 }}
+          sx={{
+            p: 2,
+            mt: 4,
+            display: "flex",
+            flexDirection: "column",
+            height: "80%",
+            alignItems: "center",
+            transform: "translate3d(0,0,-340px) rotate3d(0, 1, 0, -10deg)",
+            justifyContent: "center",
+
+            animation: "blink2 3s linear forwards",
+
+            position: "relative",
+
+            transformStyle: "preserve-3d",
+            backgroundColor: "black",
+            "&:before": {
+              position: "absolute",
+              content: '""',
+              width: "118%",
+              height: "80%",
+              filter: "blur(20px)",
+              animation: "blink3 3s linear forwards",
+
+              maskImage:
+                "linear-gradient(90deg,rgba(255, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0.75) 55%, rgba(99, 255, 15, 0) 100%)",
+
+              transform:
+                "rotate3d(1, 0, 0, 90deg) translate3d(-170px, -60px, -336px)",
+            },
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: { xs: "2rem", sm: "3rem", md: "20rem" },
+              fontWeight: "bold",
+              color: "primary.Text",
+              textAlign: "center",
+              textTransform: "uppercase",
+              textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
+
+              opacity: 0.9,
+            }}
+          >
+            SH&nbsp;&nbsp;&nbsp;&nbsp;
+          </Typography>
+        </Grid>
+        <Grid
+          size={{ xs: 12, sm: 12, md: 4, lg: 4 }}
+          order={{ xs: 1, sm: 1, md: 2, lg: 2 }}
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            mt: 4,
+            display: "flex",
+            animation: "blink2 3s linear forwards",
+
+            backgroundColor: "black",
+            transform: "translate3d(0,0,-290px)",
+
+            height: "80%",
+
+            position: "relative",
+
+            transformStyle: "preserve-3d",
+            cursor: "pointer",
+            "&:before": {
+              position: "absolute",
+              content: '""',
+              width: "118%",
+              height: "100%",
+              filter: "blur(20px)",
+              animation: "blink3 3s linear forwards",
+              maskImage:
+                "linear-gradient(90deg,rgba(255, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 45%,rgba(0, 0, 0, 0.75) 55%, rgba(99, 255, 15, 0) 100%)",
+              transform: "rotate3d(1, 0, 0, 90deg) translate3d(0,0,-320px)",
+            },
+          }}
+        >
+          <Box
+            component="img"
+            src={Middle}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+
+              width: "90%",
+              filter: "drop-shadow(32px 0px 12px  rgba(0, 0, 0, 0.5))",
+              overflow: "visible",
+              position: "relative",
+              zIndex: 4,
+            }}
+          />
+          <Typography
+            sx={{
+              position: "absolute",
+              zIndex: 2,
+              fontSize: { xs: "2rem", sm: "3rem", md: "20rem" },
+              fontWeight: "bold",
+              color: "primary.Text",
+              textAlign: "center",
+              textTransform: "uppercase",
+              opacity: 0.9,
+              textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
+            }}
+          >
+            ACH&nbsp;&nbsp;
+          </Typography>
+        </Grid>
+        <Grid
+          size={{ xs: 12, sm: 12, md: 4, lg: 4 }}
+          order={{ xs: 3, sm: 3, md: 3, lg: 3 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            mt: 4,
+            transform: "translate3d(0,0,-340px) rotate3d(0, 1, 0, 10deg)",
+            height: "80%",
+            bgcolor: "black",
+            animation: "blink2 3s linear forwards",
+
+            position: "relative",
+
+            transformStyle: "preserve-3d",
+            p: 2,
+            "&:before": {
+              position: "absolute",
+              content: '""',
+              width: "118%",
+              height: "100%",
+              filter: "blur(20px)",
+
+              animation: "blink3 3s linear forwards",
+              maskImage:
+                "linear-gradient(90deg,rgba(255, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0.75) 55%, rgba(99, 255, 15, 0) 100%)",
+
+              transform:
+                "rotate3d(1,0 , 0, 90deg) translate3d(150px,-145px,-340px) rotateZ(0deg) rotateY(0deg)",
+            },
+          }}
+        >
+          {" "}
+          <Typography
+            sx={{
+              position: "absolute",
+              zIndex: 2,
+              fontSize: { xs: "2rem", sm: "3rem", md: "20rem" },
+              fontWeight: "bold",
+              color: "primary.Text",
+              textAlign: "center",
+              opacity: 0.9,
+              textTransform: "uppercase",
+              textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
+            }}
+          >
+            IRU&nbsp;&nbsp;
+          </Typography>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+};
+
+export default MainGrid1;

@@ -7,9 +7,10 @@ const MainGrid_2 = () => {
       sx={{
         height: "100vh",
         width: "100%",
+        mt: 5,
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        bgcolor: "white",
+        maskImage: "linear-gradient(black, transparent)",
       }}
     ></Box>
   );
