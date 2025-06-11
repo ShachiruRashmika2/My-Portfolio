@@ -121,6 +121,41 @@ const MainGrid1 = () => {
               bgcolor: "rgba(255, 213, 0, 0.4)",
             },
           },
+          "@keyframes blinkImg": {
+            "0%": {
+              opacity: 0,
+            },
+            "78%": {
+              opacity: 0,
+            },
+            "79%": {
+              opacity: 0.4,
+            },
+            "80%": {
+              opacity: 0,
+            },
+            "81%": {
+              opacity: 0,
+            },
+            "82%": {
+              opacity: 0.4,
+            },
+            "83%": {
+              opacity: 0,
+            },
+            " 92%": {
+              opacity: 0.8,
+            },
+            "92.5% ": {
+              opacity: 0,
+            },
+            "93%": {
+              opacity: 0.8,
+            },
+            "100%": {
+              opacity: 1,
+            },
+          },
         }}
       >
         <Grid
@@ -248,6 +283,7 @@ const MainGrid1 = () => {
               filter: "drop-shadow(32px 0px 12px  rgba(0, 0, 0, 0.5))",
               overflow: "visible",
               position: "relative",
+              animation: "blinkImg 3s linear forwards",
               zIndex: 4,
             }}
           />
