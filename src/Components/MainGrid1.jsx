@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import Navbar from "./sample/Navbar";
 import Middle from "../assets/Images/ChatGPT Image Jun 11, 2025, 10_27_03 AM.png";
 
@@ -22,8 +22,8 @@ const MainGrid1 = () => {
         container
         spacing={3}
         sx={{
-          height: { xs: "auto", md: "85vh" },
-          width: "98%",
+          height: { xs: "auto", sm: "auto", md: "85vh" },
+          width: { xs: "auto", sm: "auto", md: "98%" },
 
           px: "2%",
 
@@ -158,6 +158,92 @@ const MainGrid1 = () => {
           },
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            display: "flex",
+            justifyContent: "center",
+            width: "2%",
+            height: "100%",
+            alignItems: "center",
+
+            left: 0,
+            zIndex: 6,
+
+            overflow: "hidden",
+          }}
+        >
+          <Typography
+            sx={{
+              writingMode: "vertical-lr",
+              textOrientation: "sideways",
+              opacity: 0,
+              transform: "rotate(180deg)",
+              fontSize: "1rem",
+              fontWeight: "bold",
+              wordSpacing: "0.5rem",
+              letterSpacing: "0.2rem",
+              textTransform: "uppercase",
+              color: "primary.main",
+              animation: "blinkImg 3s linear forwards 5.2s",
+            }}
+          >
+            Coder | Developer | Designer
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "2%",
+            height: "100%",
+
+            right: 0,
+            zIndex: 6,
+            flexDirection: "column",
+            animation: "blinkImg 3s linear forwards 5.2s",
+            opacity: 0,
+
+            overflow: "hidden",
+          }}
+        >
+          <Typography
+            sx={{
+              writingMode: "vertical-lr",
+              textOrientation: "upright",
+
+              transform: "rotate(0deg)",
+              fontSize: "1rem",
+              fontWeight: "bold",
+              wordSpacing: "0.5rem",
+              letterSpacing: "1rem",
+              textTransform: "uppercase",
+              color: "primary.main",
+            }}
+          >
+            Find Out
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              bgcolor: "transparent",
+
+              p: 2,
+              fontSize: "1.5rem",
+              color: "primary.main",
+              animation: "bounce 2s ease-in-out infinite",
+              borderRadius: "100%",
+            }}
+          >
+            ↓
+          </Button>
+        </Box>
         <Grid
           size={{ xs: 12, sm: 12, md: 12, lg: 12 }}
           sx={{
@@ -204,8 +290,7 @@ const MainGrid1 = () => {
           </Typography>
         </Grid>
         <Grid
-          size={{ xs: 12, sm: 12, md: 4, lg: 4 }}
-          order={{ xs: 2, sm: 2, md: 1, lg: 1 }}
+          size={4}
           sx={{
             p: 2,
             mt: 4,
@@ -246,7 +331,7 @@ const MainGrid1 = () => {
               textAlign: "center",
               textTransform: "uppercase",
               textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
-              animation: "blink 3s linear forwards 5.2s",
+              animation: "blink 3s linear forwards 4.2s",
 
               opacity: 0,
             }}
@@ -255,8 +340,7 @@ const MainGrid1 = () => {
           </Typography>
         </Grid>
         <Grid
-          size={{ xs: 12, sm: 12, md: 4, lg: 4 }}
-          order={{ xs: 1, sm: 1, md: 2, lg: 2 }}
+          size={4}
           sx={{
             justifyContent: "center",
             alignItems: "center",
@@ -311,7 +395,7 @@ const MainGrid1 = () => {
               color: "primary.Text",
               textAlign: "center",
               textTransform: "uppercase",
-              animation: "blink 3s linear forwards 5.2s",
+              animation: "blink 3s linear forwards 4.2s",
 
               opacity: 0,
               textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
@@ -321,8 +405,7 @@ const MainGrid1 = () => {
           </Typography>
         </Grid>
         <Grid
-          size={{ xs: 12, sm: 12, md: 4, lg: 4 }}
-          order={{ xs: 3, sm: 3, md: 3, lg: 3 }}
+          size={4}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -348,8 +431,10 @@ const MainGrid1 = () => {
               maskImage:
                 "linear-gradient(90deg,rgba(255, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0.75) 55%, rgba(99, 255, 15, 0) 100%)",
 
-              transform:
-                "rotate3d(1,0 , 0, 90deg) translate3d(150px,-145px,-340px) rotateZ(0deg) rotateY(0deg)",
+              transform: {
+                md: "rotate3d(1,0 , 0, 90deg) translate3d(150px,-145px,-340px) rotateZ(0deg) rotateY(0deg)",
+                xs: "rotate3d(1,0 , 0, 90deg) translate3d(150px,-45px,-340px) rotateZ(0deg) rotateY(0deg)",
+              },
             },
           }}
         >
@@ -363,7 +448,7 @@ const MainGrid1 = () => {
               color: "primary.Text",
               textAlign: "center",
               opacity: 0,
-              animation: "blink 3s linear forwards 5.2s",
+              animation: "blink 3s linear forwards 4.2s",
 
               textTransform: "uppercase",
               textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
