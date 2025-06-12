@@ -2,10 +2,9 @@ import React from "react";
 import { Container, Typography, Box, Button } from "@mui/material";
 
 import MainGrid1 from "../Components/MainGrid1";
-import useAOS from "../Utils/AOS";
+import MainGrid2 from "../Components/MainGrid2";
 
 const Home = () => {
-  useAOS();
   return (
     <Box
       sx={{
@@ -15,6 +14,7 @@ const Home = () => {
       }}
     >
       <MainGrid1 />
+      <MainGrid2 />
     </Box>
   );
 };

@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import Face from "../assets/Images/Me (2).png";
+
 const MainGrid_1 = () => {
   return (
     <Grid

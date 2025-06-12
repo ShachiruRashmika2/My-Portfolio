@@ -5,6 +5,13 @@ import Left from "../assets/Images/generate this one fu.png";
 import Right from "../assets/Images/replace human with a1.png";
 
 const MainGrid1 = () => {
+  const handleScrollClick = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Box
       sx={{
@@ -229,6 +236,7 @@ const MainGrid1 = () => {
           </Typography>
           <Button
             variant="contained"
+            onClick={handleScrollClick}
             sx={{
               display: "flex",
               flexDirection: "column",

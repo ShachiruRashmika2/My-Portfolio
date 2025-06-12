@@ -9,7 +9,7 @@ const blink = keyframes`
 `;
 
 const type = keyframes`
-  to { width: 17em; }
+  to { width: 100vw; }
 `;
 
 const TerminalLine = ({ text, color, delay, cursorDelay, infiniteCursor }) => (
@@ -18,7 +18,7 @@ const TerminalLine = ({ text, color, delay, cursorDelay, infiniteCursor }) => (
       display: "flex",
       color,
       fontFamily: "monospace",
-      fontSize: "1.2em",
+      fontSize: "2em",
       whiteSpace: "nowrap",
       overflow: "hidden",
       width: 0,
@@ -106,7 +106,7 @@ const Terminal = () => {
         sx={{
           backgroundColor: "#151515",
           width: "100%",
-          height: 300,
+          height: 500,
           mx: "auto",
           px: 3,
           py: 2,
@@ -127,17 +127,12 @@ const Terminal = () => {
           cursorDelay={5.25}
         />
         <TerminalLine
-          text="🚀 Specializing in React "
+          text="🚀 Specializing in React, Node.js, MongoDB"
           color="#CDEE69"
           delay={5.25}
           cursorDelay={5.25}
         />
-        <TerminalLine
-          text="    , Node.js, MongoDB"
-          color="#CDEE69"
-          delay={5.25}
-          cursorDelay={6.25}
-        />
+
         <TerminalLine
           text="🧠 Passionate about AI, ML,"
           color="#CDEE69"
@@ -205,7 +200,6 @@ const Terminal = () => {
               width: "100%",
               minWidth: "250px",
             }}
-            autoFocus
           />
         </Box>
         {showResponse && !loading && (
