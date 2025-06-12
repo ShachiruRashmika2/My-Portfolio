@@ -1,6 +1,8 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Navbar from "./sample/Navbar";
 import Middle from "../assets/Images/ChatGPT Image Jun 11, 2025, 10_27_03 AM.png";
+import Left from "../assets/Images/generate this one fu.png";
+import Right from "../assets/Images/replace human with a1.png";
 
 const MainGrid1 = () => {
   return (
@@ -323,11 +325,30 @@ const MainGrid1 = () => {
             },
           }}
         >
+          <Box
+            component="img"
+            src={Left}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+
+              width: "100%",
+              filter: "drop-shadow(32px 0px 12px  rgba(0, 0, 0, 0.5))",
+              overflow: "visible",
+              position: "relative",
+              animation: "blinkImg 3s linear forwards",
+              zIndex: 4,
+              transform: "translate3d(-53px, 40px, 0px) ",
+            }}
+          />
           <Typography
             sx={{
               fontSize: { xs: "2rem", sm: "3rem", md: "20rem" },
               fontWeight: "bold",
               color: "primary.Text",
+              position: "absolute",
+              zIndex: 2,
               textAlign: "center",
               textTransform: "uppercase",
               textShadow: "0 0 10px rgba(255, 213, 0, 0.81)",
@@ -438,7 +459,23 @@ const MainGrid1 = () => {
             },
           }}
         >
-          {" "}
+          <Box
+            component="img"
+            src={Right}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+
+              width: "105%",
+              filter: "drop-shadow(32px 0px 12px  rgba(0, 0, 0, 0.5))",
+              overflow: "visible",
+              position: "relative",
+              animation: "blinkImg 3s linear forwards",
+              zIndex: 4,
+              transform: "translate3d(45px, -71px, 0px)",
+            }}
+          />
           <Typography
             sx={{
               position: "absolute",
